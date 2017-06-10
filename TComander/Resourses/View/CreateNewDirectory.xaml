@@ -1,0 +1,20 @@
+﻿<Window x:Class="TComander.Resourses.View.CreateNewDirectory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TComander.Resourses.View"
+        mc:Ignorable="d"
+        Title="Kreator Nowego Katalogu" Height="184.883" Width="300">
+    <Grid>
+
+        <Image x:Name="image_folder" Source="C:\Users\Mindi\Desktop\POB\MySolution\TComander\TComander\Resourses\DiscObjects\Images\Directory.bmp" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label_nazwa" Content="Nazwa: " HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_nazwa" HorizontalAlignment="Left" Height="23" Margin="166,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="label_lokalizacja" Content="Lokalizacja:" HorizontalAlignment="Left" Margin="115,41,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton_left" Content="" HorizontalAlignment="Left" Margin="115,72,0,0" VerticalAlignment="Top" Width="167" IsChecked="True"/>
+        <RadioButton x:Name="radioButton_right" Content="" HorizontalAlignment="Left" Margin="115,95,0,0" VerticalAlignment="Top" Width="167"/>
+        <Button x:Name="button_utworz" Content="Utwóż" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="130" Click="button_utworz_Click"/>
+        <Button x:Name="button_anuluj" Content="Anuluj" HorizontalAlignment="Left" Margin="145,115,0,0" VerticalAlignment="Top" Width="137" Click="button_anuluj_Click"/>
+    </Grid>
+</Window>

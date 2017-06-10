@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TComander</name>
+    </assembly>
+    <members>
+        <member name="P:TComander.Resourses.DiscObjects.DiscElement.Path">
+            <summary>
+            Path - ścieżka do podanego elementu
+                odczyt  PUBLIC
+                zapis   PRIVATE
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.DiscElement.CreationTime">
+            <summary>
+            CreationTime - data utworzenia elementu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.DiscElement.Name">
+            <summary>
+            Name - nazwa obiektu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.DiscElement.#ctor(System.String)">
+            <summary>
+            Podstawowy konstruktor klasy wykorzystujący ścieżke dostępu
+            </summary>
+            <param name="path">Scieżka dostępu</param>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.DiscElement.GetDescription">
+            <summary>
+            Funkcja abstrakcyjna zwracająca zformatowane dane do wyświetlenia w listBox
+            </summary>
+            <returns>(String) opis elementu</returns>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyDirectory.CreationTime">
+            <summary>
+            CreationTime - data utworzenia folderu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyDirectory.Name">
+            <summary>
+            Name - nazwa folderu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyDirectory.NumberOfSubDirectories">
+            <summary>
+            NumberOfSubDirectories - ilość podfolderów, które zawiera dany folder
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyDirectory.NumberOfRecursiveFiles">
+            <summary>
+            NumberOfRecursiveFiles - ilość plików, które zawiera folder
+                odczyt  PUBLIC        /// </summary>
+        </member>
+        <member name="F:TComander.Resourses.DiscObjects.MyDirectory.icon">
+            <summary>
+            zmienna tzrymająca ikone folderu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.#ctor(System.String)">
+            <summary>
+            Konstruktor klasy folderów. Jego głównym zadaniem jest przekazanie zmiennej
+            do klasy nadrzędnej i przypisanie do obiektu ikony
+            </summary>
+            <param name="directoryPath">Scierzka dostępu do folderu</param>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetSubDiscElements">
+            <summary>
+            Metoda zwracająca wszystkie elementy folderu, czyli foldery i pliki
+            </summary>
+            <returns>Lista wszystkich elementów danego folderu</returns>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetAllFiles">
+            <summary>
+            Metoda zwracająca wszystkie pliki zawarte w folderze
+            </summary>
+            <returns>Lista wszystkich pliki zawartych w folderze</returns>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetSubDirectories">
+            <summary>
+            Metoda zwracająca wszystkie pod-foldery zawarte w folderze
+            </summary>
+            <returns>Lista wszystkich pod-folderów zawartych w folderze</returns>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetSubDirectoriesRecursively">
+            <summary>
+            Metoda zwracająca wszystkie pod-foldery zawarte w folderze rekurencyjnie
+            </summary>
+            <returns>Lista wszystkich pod-folderów zawartych w folderach</returns>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetAllFilesRecursively">
+            <summary>
+            Metoda zwracająca wszystkie pliki zawarte w folderze rekurencyjnie
+            </summary>
+            <returns>Lista wszystkich plików zawartych w folderach</returns>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyDirectory.GetDescription">
+            <summary>
+            Metoda generująca opis danego folderu: Nazwa , Czas Utworzenia i ilość pod folderów
+            </summary>
+            <returns>Opis folderu</returns>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyFile.CreationTime">
+            <summary>
+            CreationTime - data utworzenia folderu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="P:TComander.Resourses.DiscObjects.MyFile.Name">
+            <summary>
+            Name - nazwa folderu
+                odczyt  PUBLIC
+            </summary>
+        </member>
+        <member name="F:TComander.Resourses.DiscObjects.MyFile.icon">
+            <summary>
+            zmienna tzrymająca ikone folderu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyFile.#ctor(System.String)">
+            <summary>
+            Konstruktor klasy plików. Jego głównym zadaniem jest przekazanie zmiennej
+            do klasy nadrzędnej i przypisanie do obiektu ikony
+            </summary>
+            <param name="path">ścieżka do pliku</param>
+        </member>
+        <member name="M:TComander.Resourses.DiscObjects.MyFile.GetDescription">
+            <summary>
+            Generuje krótki opis dla elemetu uwzględniającu nazwe i datę powstania
+            </summary>
+            <returns>Opis elementu</returns>
+        </member>
+        <member name="T:TComander.Resourses.View.CreateNewDirectory">
+            <summary>
+            Interaction logic for CreateNewDirectory.xaml
+            </summary>
+            <summary>
+            CreateNewDirectory
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.CreateNewDirectory.#ctor(System.String,System.String)">
+            <summary>
+            Konstruktor okna generowania nowego folderu w jednej z dwuch zadanych lokalizacji
+            </summary>
+            <param name="directoryLeft">Lokalizacja nr.1</param>
+            <param name="directoryRight">Lokalizacja nr.2</param>
+        </member>
+        <member name="T:TComander.Resourses.View.CreateNewDirectory.DirectoryCreateEvent">
+            <summary>
+            Delegat obsługujący eveny tworzenia nowego folderu
+            </summary>
+            <param name="creationPath">ścieżka nowo tworzonego folderu</param>
+        </member>
+        <member name="E:TComander.Resourses.View.CreateNewDirectory.createDirectory">
+            <summary>
+            Event przypisany do tworzenia nowego folderu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.CreateNewDirectory.button_utworz_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Pzrycisk wysyłający żądanie utworzenia nowego folderu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.Resourses.View.CreateNewDirectory.button_anuluj_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk anulujący tworzenie folderu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.Resourses.View.CreateNewDirectory.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TComander.Resourses.View.PrevievTxt">
+            <summary>
+            Interaction logic for PrevievTxt.xaml
+            </summary>
+            <summary>
+            PrevievTxt
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.PrevievTxt.#ctor(System.String)">
+            <summary>
+            Konstruktor okan słurzącego do podglądu tekstu typu:
+                -txt
+                -html
+            </summary>
+            <param name="path">ścieżka do pliku</param>
+        </member>
+        <member name="M:TComander.Resourses.View.PrevievTxt.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TComander.Resourses.View.PreviewIamge">
+            <summary>
+            Interaction logic for PreviewIamge.xaml
+            </summary>
+            <summary>
+            PreviewIamge
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.PreviewIamge.#ctor(System.String)">
+             <summary>
+             Konstruktor okan słurzącego do podglądu obrazu typu:
+                 -jpg
+                 -png
+                 -gif
+            </summary>
+             <param name="path">ścieżka dostępu do pliku</param>
+        </member>
+        <member name="M:TComander.Resourses.View.PreviewIamge.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TComander.Resourses.View.UCDiscElement">
+            <summary>
+            Interaction logic for UCDiscElement.xaml
+            </summary>
+            <summary>
+            UCDiscElement
+            </summary>
+        </member>
+        <member name="F:TComander.Resourses.View.UCDiscElement.UCElement">
+            <summary>
+            Element dysku do którego jest tworzony User Controler
+            </summary>
+        </member>
+        <member name="F:TComander.Resourses.View.UCDiscElement.isRightDispaly">
+            <summary>
+            Flaga oznaczająca czy User Controler znajduje się na prawym drzewie
+            </summary>
+        </member>
+        <member name="F:TComander.Resourses.View.UCDiscElement.ifIsChecked">
+            <summary>
+            Flaga oczaczająca czy element jest zaznaczony do operacji
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.#ctor(TComander.Resourses.DiscObjects.DiscElement,System.Boolean)">
+            <summary>
+            Konstruktor User Controlera
+            Przypisuje odpowiednią ikone i odpowiednio formatuje guziki zależnie od typu elementu
+            </summary>
+            <param name="newUCElement">Element do którego jest tworzony User Controler</param>
+            <param name="display">Zienna pytającza czy User Controler dotyczy prawego drzewa</param>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.HidingPrewievButton">
+            <summary>
+            Metoda modyfikująca przycisk podglądu zależnie od typu elementu
+            </summary>
+        </member>
+        <member name="T:TComander.Resourses.View.UCDiscElement.FileDeletedEvent">
+            <summary>
+            Delegat obsługujący event usuwania elementu
+            </summary>
+            <param name="discElement">Element do usunięcia</param>
+        </member>
+        <member name="E:TComander.Resourses.View.UCDiscElement.fileDeleted">
+            <summary>
+            Event przypisany do usuwania obiektu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.button_Delete_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący akcje usunięcia elementu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:TComander.Resourses.View.UCDiscElement.FileOpenedEvent">
+            <summary>
+            Delegat obsługujący event otwierania elementu
+            </summary>
+            <param name="discElement">Element do otwarcia</param>
+            <param name="display">Zienna pytającza czy element dotyczy prawego drzewa</param>
+        </member>
+        <member name="E:TComander.Resourses.View.UCDiscElement.fileOpened">
+            <summary>
+            Event przypisany do otwierania obiektu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.button_Open_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący akcje otwarcia elementu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:TComander.Resourses.View.UCDiscElement.FileCheckedEvent">
+            <summary>
+            Delegat obsługujący event zaznaczania i odznaczania elementu
+            </summary>
+            <param name="discElement">Element do otwarcia</param>
+            <param name="ifIsChecked">Aktualna flaga elementu</param>
+            <param name="display">Zienna pytającza czy element dotyczy prawego drzewa</param>
+        </member>
+        <member name="E:TComander.Resourses.View.UCDiscElement.fileChecked">
+            <summary>
+            Event przypisany do zaznaczania i odznaczania obiektu
+            </summary>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.checkBox_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący akcje zaznaczania lub odznaczania elementu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.button_preview_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołującu akcje podglądu obiektu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.Resourses.View.UCDiscElement.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TComander.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:TComander.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:TComander.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:TComander.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="F:TComander.MainWindow.RightListSelected">
+            <summary>
+            Pole RightListSelected (private) jest używane acy określić które 
+            pliki zostały wybrane z lewego drzewa za pomocą checkBox
+            </summary>
+        </member>
+        <member name="F:TComander.MainWindow.LeftListSelected">
+            <summary>
+            Pole LeftListSelected (private) jest używane acy określić które 
+            pliki zostały wybrane z lewego drzewa za pomocą checkBox
+            </summary>
+        </member>
+        <member name="F:TComander.MainWindow.sort">
+            <summary>
+            Pole opisujące delegata i określające jaki typ sortowania stosować
+            </summary>
+        </member>
+        <member name="T:TComander.MainWindow.TypeOfSorting">
+            <summary>
+            Delegat określający typ sortowania
+            </summary>
+            <param name="unorderedList">Nieposortowana lista elementó</param>
+            <returns>Posortowana lista względem odpowiednij funkcji</returns>
+        </member>
+        <member name="M:TComander.MainWindow.#ctor">
+            <summary>
+            Po inicjalizacji komponentów, wczytuje drzewo i następnie dodaje 
+            FileSystemWatcher do obu drzew, aby wykrywały przenoszenie plików
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.CreateDirectory(System.String,System.String)">
+            <summary>
+            Matoda wywołująca okno tworzenia nowego folderu
+            </summary>
+            <param name="newPathLeft">Lokalizacja lewego drzewa</param>
+            <param name="newPathRight">Lokalizacja prawego drzewa</param>
+        </member>
+        <member name="M:TComander.MainWindow.ResetTree">
+            <summary>
+            Metoda resetująca zawartośc w obdwy drzewach w zależności od ścieżek podanych w text boxach
+            Dodatkowo resetuje obydwie listy zaznaczonych elementów
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.FillTree(System.Windows.Controls.TreeView,System.Windows.Controls.TextBox)">
+            <summary>
+            Metoda słurząca do uzupełniania podanego drzewa , korzystając z textbox  podanego jako parametr
+            </summary>
+            <param name="display">Drzewo, które ma być zapełnione</param>
+            <param name="dirBox">Textbox , z którego będzie pobrana lokalizacja do uzupełniania drzewa</param>
+        </member>
+        <member name="M:TComander.MainWindow.createRootNode(System.String,System.Windows.Controls.TreeView)">
+            <summary>
+            Tworzy korzeń drzewa do którego, będo podłączane pozostałe elementy lokalizacji 
+            </summary>
+            <param name="inputPath">Scieżka do elementu</param>
+            <param name="display">Określenie dla którego drzewa powinien zostać dodany korzeń</param>
+            <returns>Element TreeVievItem, który jest korzeniem</returns>
+        </member>
+        <member name="M:TComander.MainWindow.createNode(TComander.Resourses.DiscObjects.DiscElement,System.Windows.Controls.TreeView)">
+            <summary>
+            Tworzy element drzewa, określający element dysku
+            </summary>
+            <param name="element">Scieżka do elementu</param>
+            <param name="display">Określenie dla którego drzewa powinien zostać dodany element</param>
+            <returns>Element TreeVievItem</returns>
+        </member>
+        <member name="M:TComander.MainWindow.RightListSelectedOperator(TComander.Resourses.DiscObjects.DiscElement,System.Boolean)">
+            <summary>
+            Rozwiązuje problem odznaczania i zaznaczania elementów znajdujących się na prawym drzewie
+            </summary>
+            <param name="element">Element względem którego rozpatrywana jest zmiana zaznaczenia</param>
+            <param name="statusChecked">Aktualny stan zaznaczenia obiektu</param>
+        </member>
+        <member name="M:TComander.MainWindow.LeftListSelectedOperator(TComander.Resourses.DiscObjects.DiscElement,System.Boolean)">
+            <summary>
+            Rozwiązuje problem odznaczania i zaznaczania elementów znajdujących się na lewym drzewie
+            </summary>
+            <param name="element">Element względem którego rozpatrywana jest zmiana zaznaczenia</param>
+            <param name="statusChecked">Aktualny stan zaznaczenia obiektu</param>
+        </member>
+        <member name="M:TComander.MainWindow.Bulck_Delete">
+            <summary>
+            Metoda usuwająca aktualnie zaznaczone elementy
+            Obsługa błędów:
+                -Plik nie możliwy do usunięcia (Rozwiązaon)
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.GetSelectedDescription">
+            <summary>
+            Metoda generująca listę, które elementy są zaznaczone
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.MoveElements">
+            <summary>
+            Metoda sł€żąca do przenoszenia elementów z jednej lokacji do drógiej
+            Obsłużone błędy:
+                -Obiekt nie może być przeniesiony(Obsłużono)
+                -Lokacja początkowa i końcowa są takie same(Obsłużono)
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.CopyElements">
+            <summary>
+            Metoda służaca do kopiowania elementów
+            </summary>
+        </member>
+        <member name="M:TComander.MainWindow.Search(System.String)">
+            <summary>
+            Funkcja wyszukująca nazw elementów zaczynająccych się na podany ciąg znaków i wyświetla go na lewym drzewie
+            </summary>
+            <param name="startWith">Ciąg znaków po którym będą wyszukiwane obiekty</param>
+        </member>
+        <member name="M:TComander.MainWindow.FileSystemWatcher_Created(System.Object,System.IO.FileSystemEventArgs)">
+            <summary>
+            Metoda obsługująca FileSystemWatcher
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.DiscElementVievFileOperand(TComander.Resourses.DiscObjects.DiscElement,System.Boolean,System.Boolean)">
+            <summary>
+            Metoda eventu obsługująca zaznaczanie i odznaczanie elementów
+            </summary>
+            <param name="discElement">Element względem którego rozpatrywana jest zmiana zaznaczenia</param>
+            <param name="statusChecked">Aktualny stan zaznaczenia obiektu</param>
+            <param name="isRightDisplay">Czy drzewo dla którego rozpatrujemy zmiane jest prawe</param>
+        </member>
+        <member name="M:TComander.MainWindow.DiscElementVievFileOpened(TComander.Resourses.DiscObjects.DiscElement,System.Boolean)">
+            <summary>
+            Metoda eventu obsługująca otwieranie plików
+            </summary>
+            <param name="discElement">Element, który zostanie otwary</param>
+            <param name="nullificate">Parametr zbędny</param>
+        </member>
+        <member name="M:TComander.MainWindow.DiscElementVievDirectoryOpened(TComander.Resourses.DiscObjects.DiscElement,System.Boolean)">
+            <summary>
+            Metoda eventu obsługująca otwieranie folderów
+            </summary>
+            <param name="discElement">Element, który zostanie otwary</param>
+            <param name="nullificate">Czy drzewo dla którego rozpatrujemy zmiane lokalizacji jest prawe</param>
+        </member>
+        <member name="M:TComander.MainWindow.DiscElementVievFileDeleted(TComander.Resourses.DiscObjects.DiscElement)">
+            <summary>
+            Metoda przypisana do eveny usuwania i resetuje drzewo po usunięciach
+            </summary>
+            <param name="discElement">Usunięty element</param>
+        </member>
+        <member name="M:TComander.MainWindow.createdirectory(System.String)">
+            <summary>
+            Metoda przypisana do eventu dodawania folderu
+            </summary>
+            <param name="creationPath">ścieżka tworzonego folderu</param>
+        </member>
+        <member name="M:TComander.MainWindow.TypeSort(System.Collections.Generic.List{TComander.Resourses.DiscObjects.DiscElement})">
+            <summary>
+            Zwraca liste posortowaną według typów
+            </summary>
+            <param name="unorderedList">Nieposortowana lista obiektów</param>
+            <returns>Posortowana lista obiektów względem typów</returns>
+        </member>
+        <member name="M:TComander.MainWindow.DataSortAscendet(System.Collections.Generic.List{TComander.Resourses.DiscObjects.DiscElement})">
+            <summary>
+            Zwraca liste posortowaną według daty powstania rosnąco
+            </summary>
+            <param name="unorderedList">Nieposortowana lista obiektów</param>
+            <returns>Posortowana lista obiektów względem daty powstania rosnąco</returns>
+        </member>
+        <member name="M:TComander.MainWindow.DataSortDescendet(System.Collections.Generic.List{TComander.Resourses.DiscObjects.DiscElement})">
+            <summary>
+            Zwraca liste posortowaną według daty powstania malejąco
+            </summary>
+            <param name="unorderedList">Nieposortowana lista obiektów</param>
+            <returns>Posortowana lista obiektów względem daty powstania malejąco</returns>
+        </member>
+        <member name="M:TComander.MainWindow.NameSortAscendet(System.Collections.Generic.List{TComander.Resourses.DiscObjects.DiscElement})">
+            <summary>
+            Zwraca liste posortowaną według nazwy rosnąco
+            </summary>
+            <param name="unorderedList">Nieposortowana lista obiektów</param>
+            <returns>Posortowana lista obiektów względem daty powstania malejąco</returns>
+        </member>
+        <member name="M:TComander.MainWindow.NameSortDescendet(System.Collections.Generic.List{TComander.Resourses.DiscObjects.DiscElement})">
+            <summary>
+            Zwraca liste posortowaną według nazwy malejąco
+            </summary>
+            <param name="unorderedList">Nieposortowana lista obiektów</param>
+            <returns>Posortowana lista obiektów względem daty powstania malejąco</returns>
+        </member>
+        <member name="M:TComander.MainWindow.button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący spis zaznaczonych obiektów
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_delet_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący usunięcie zaznaczonych elementów i odświerzenie drzewa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_move_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący przeniesienie zaznaczonych elementów do innej lokacji
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_copy_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący skopiowanie zaznaczonych elementów
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_deselect_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący odznaczenie wszystkich elementów (resetowanie drzewa)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_search_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący metode szukania w lokalizacji
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.button_Click_1(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przycisk wywołujący tworzenie nowego folderu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.radioButton_typeSort_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przypisanie do delegata sort sortowania względem typu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.radioButton_dataAscent_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przypisanie do delegata sort sortowania względem daty powstania rosnąco
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.radioButton_dataDescend_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przypisanie do delegata sort sortowania względem daty powstania malejąco
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.radioButton_nameAscend_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przypisanie do delegata sort sortowania względem nazwy rosnąco
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.radioButton_nameDescend_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Przypisanie do delegata sort sortowania względem nazwy malejąco
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:TComander.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TComander.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:TComander.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:TComander.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

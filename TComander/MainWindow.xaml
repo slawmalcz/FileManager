@@ -1,0 +1,36 @@
+﻿<Window x:Class="TComander.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TComander"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1300">
+    <Grid>
+        <Label x:Name="label_directoryLeft" Content="Directory: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_directoryLeft" HorizontalAlignment="Left" Height="23" Margin="79,14,0,0" TextWrapping="Wrap" Text="C:\Users\Mindi\Desktop" VerticalAlignment="Top" Width="491"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="617" Margin="10,42,0,0" VerticalAlignment="Top" Width="560">
+            <TreeView x:Name="treeView_directoryLeft"/>
+        </ScrollViewer>
+        <ScrollViewer HorizontalAlignment="Left" Height="617" Margin="575,42,0,0" VerticalAlignment="Top" Width="560">
+            <TreeView x:Name="treeView_directoryRight"/>
+        </ScrollViewer>
+        <Label x:Name="label_directoryRight" Content="Directory: " HorizontalAlignment="Left" Margin="575,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_directoryRight" HorizontalAlignment="Left" Height="23" Margin="643,14,0,0" TextWrapping="Wrap" Text="C:\Users\Mindi\Desktop" VerticalAlignment="Top" Width="492"/>
+        <Button x:Name="button_selec_description" Content="Zaznaczone elementy" HorizontalAlignment="Left" Margin="1140,10,0,0" VerticalAlignment="Top" Width="142" Click="button_Click"/>
+        <Button x:Name="button_delet" Content="Usuń" HorizontalAlignment="Left" Margin="1140,76,0,0" VerticalAlignment="Top" Width="142" Click="button_delet_Click"/>
+        <Button x:Name="button_move" Content="Przenieś" HorizontalAlignment="Left" Margin="1140,101,0,0" VerticalAlignment="Top" Width="142" Click="button_move_Click"/>
+        <Button x:Name="button_copy" Content="Kopiuj" HorizontalAlignment="Left" Margin="1140,126,0,0" VerticalAlignment="Top" Width="142" Click="button_copy_Click"/>
+        <Button x:Name="button_deselect" Content="Odznacz wszystko" HorizontalAlignment="Left" Margin="1140,35,0,0" VerticalAlignment="Top" Width="142" Click="button_deselect_Click"/>
+        <Button x:Name="button" Content="Create Directory" HorizontalAlignment="Left" Margin="1140,174,0,0" VerticalAlignment="Top" Width="142" Click="button_Click_1"/>
+        <Label x:Name="label_sorting_group" Content="Sortuj względem:" HorizontalAlignment="Left" Margin="1140,218,0,0" VerticalAlignment="Top" Width="142"/>
+        <RadioButton x:Name="radioButton_typeSort" Content="Typów" HorizontalAlignment="Left" Margin="1140,250,0,0" VerticalAlignment="Top" Checked="radioButton_typeSort_Checked" IsChecked="True"/>
+        <RadioButton x:Name="radioButton_dataAscent" Content="Daty utworzenia rosnąco" HorizontalAlignment="Left" Margin="1140,270,0,0" VerticalAlignment="Top" Checked="radioButton_dataAscent_Checked" />
+        <RadioButton x:Name="radioButton_dataDescend" Content="Daty utworzenia malejąco" HorizontalAlignment="Left" Margin="1140,290,0,0" VerticalAlignment="Top" Checked="radioButton_dataDescend_Checked" />
+        <RadioButton x:Name="radioButton_nameAscend" Content="Nazwy rosnąco" HorizontalAlignment="Left" Margin="1140,310,0,0" VerticalAlignment="Top" Checked="radioButton_nameAscend_Checked" />
+        <RadioButton x:Name="radioButton_nameDescend" Content="Nazwy malejąco" HorizontalAlignment="Left" Margin="1140,330,0,0" VerticalAlignment="Top" Checked="radioButton_nameDescend_Checked" />
+        <Label x:Name="label_search" Content="Wyszukaj:" HorizontalAlignment="Left" Margin="1140,375,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_search" HorizontalAlignment="Left" Height="23" Margin="1140,406,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <Button x:Name="button_search" Content="Wyszukaj" HorizontalAlignment="Left" Margin="1140,434,0,0" VerticalAlignment="Top" Width="142" Click="button_search_Click"/>
+    </Grid>
+</Window>

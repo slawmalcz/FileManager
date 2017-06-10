@@ -1,0 +1,30 @@
+﻿Należy stworzyć manager plików w stylu total commander
+
+ 
+Manager ma być w dwóch panelach (po prawej pliki i po lewej pliki)
+jak chcemy skopiować plik to zaznaczamy po prawej i kopiujemy na lewą stronę
+Podobnie działają WinSCP i freecommander.
+ 
+Funkcje:
+ 
+v Wchodzenie do podfolderów i folderu nadrzędnego (jak w total commander) 
+	Sortowanie plików/ folderów po:
+v nazwie
+v dacie utworzenia
+v Edycja domyślnym programem 
+v kopiowanie (takie jak w total commander), 
+v usuwanie
+v tworzenie nowych folderów
+v Przeszukiwanie plików po nazwach
+v wbudowana przeglądarka plików graficznych
+v wbudowana przeglądarka plików tekstowych
+
+ 
+ 
+Należy użyć:
+v obiektowości 
+v dziedziczenia
+v eventów
+v wyjątków
+x poprawne nazewnictwo pól i metod
+x poprawne komentarze
